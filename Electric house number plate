@@ -1,0 +1,36 @@
+#include <Adafruit_GFX.h>
+#include <Adafruit_ST7735.h>
+#include <Adafruit_ST7789.h>
+#include <Fonts/FreeSerif12pt7b.h>
+#include <Fonts/FreeSansBold9pt7b.h>
+#include <Fonts/FreeSans9pt7b.h>
+#include <SPI.h>
+#define TFT_CS  10 
+#define TFT_DC   8 
+#define TFT_RST  9 
+Adafruit_ST7735 tft = Adafruit_ST7735(TFT_CS, TFT_DC, TFT_RST);
+void setup(void) 
+  {
+    tft.initR(INITR_BLACKTAB);    
+    tft.setRotation(1);
+    tft.fillScreen(ST77XX_BLACK); 
+    tft.setCursor(10, 30);
+    tft.setTextColor(ST77XX_WHITE);
+    tft.setFont(&FreeSerif12pt7b);
+    tft.print("T2A  32");  
+    tft.setCursor(0, 60);
+    tft.setTextColor(ST77XX_YELLOW);
+    tft.setFont(&FreeSans9pt7b);
+    tft.print("No.683,West Road,North District,           Hsinchu City");
+    showIcons();  
+  }
+
+void showIcons() 
+  {
+    delay(500);
+  }
+
+void loop() 
+{
+  
+}
